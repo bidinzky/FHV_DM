@@ -1,15 +1,16 @@
 package DB;
 
-import java.sql.Date;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Department {
     private int deptNo;
     private String name;
     private Person deptHead;
-    private float budget;
+    private BigDecimal budget;
     private Department parentDepartment;
-    private Date founded;
+    private LocalDate founded;
     private List<Person> members;
     private List<Department> subDepartments;
 
@@ -53,11 +54,11 @@ public class Department {
         this.deptHead = deptHead;
     }
 
-    public float getBudget() {
+    public BigDecimal getBudget() {
         return budget;
     }
 
-    public void setBudget(float budget) {
+    public void setBudget(BigDecimal budget) {
         this.budget = budget;
     }
 
@@ -69,11 +70,11 @@ public class Department {
         this.parentDepartment = parentDepartment;
     }
 
-    public Date getFounded() {
+    public LocalDate getFounded() {
         return founded;
     }
 
-    public void setFounded(Date founded) {
+    public void setFounded(LocalDate founded) {
         this.founded = founded;
     }
 }

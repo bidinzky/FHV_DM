@@ -1,6 +1,8 @@
 package DB;
 
+import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Person {
@@ -8,9 +10,9 @@ public class Person {
     private String firstName;
     private String lastName;
     private Department department;
-    private float salary;
-    private Date entryDate;
-    private Date quitDate;
+    private BigDecimal salary;
+    private LocalDate entryDate;
+    private LocalDate quitDate;
     private char gender;
     private List<Project> projects;
     private List<Project> headOfProjects;
@@ -64,35 +66,35 @@ public class Person {
         this.department = department;
     }
 
-    public float getSalary() {
-        return salary;
-    }
-
-    public void setSalary(float salary) {
-        this.salary = salary;
-    }
-
-    public Date getEntryDate() {
-        return entryDate;
-    }
-
-    public void setEntryDate(Date entryDate) {
-        this.entryDate = entryDate;
-    }
-
-    public Date getQuitDate() {
-        return quitDate;
-    }
-
-    public void setQuitDate(Date quitDate) {
-        this.quitDate = quitDate;
-    }
-
     public char getGender() {
         return gender;
     }
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
+
+    public LocalDate getEntryDate() {
+        return entryDate;
+    }
+
+    public void setEntryDate(LocalDate entryDate) {
+        this.entryDate = entryDate;
+    }
+
+    public LocalDate getQuitDate() {
+        return quitDate;
+    }
+
+    public void setQuitDate(LocalDate quitDate) {
+        this.quitDate = quitDate;
     }
 }
