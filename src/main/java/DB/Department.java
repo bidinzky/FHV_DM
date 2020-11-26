@@ -1,37 +1,56 @@
 package DB;
 
 import java.sql.Date;
+import java.util.List;
 
 public class Department {
-    private int deptno;
-    private String deptname;
-    private Person depthead;
+    private int deptNo;
+    private String name;
+    private Person deptHead;
     private float budget;
-    private Department in_dept;
+    private Department parentDepartment;
     private Date founded;
+    private List<Person> members;
+    private List<Department> subDepartments;
 
-    public int getDeptno() {
-        return deptno;
+    public List<Person> getMembers() {
+        return members;
     }
 
-    public void setDeptno(int deptno) {
-        this.deptno = deptno;
+    public void setMembers(List<Person> members) {
+        this.members = members;
     }
 
-    public String getDeptname() {
-        return deptname;
+    public List<Department> getSubDepartments() {
+        return subDepartments;
     }
 
-    public void setDeptname(String deptname) {
-        this.deptname = deptname;
+    public void setSubDepartments(List<Department> subDepartments) {
+        this.subDepartments = subDepartments;
     }
 
-    public Person getDepthead() {
-        return depthead;
+    public int getDeptNo() {
+        return deptNo;
     }
 
-    public void setDepthead(Person depthead) {
-        this.depthead = depthead;
+    public void setDeptNo(int deptNo) {
+        this.deptNo = deptNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Person getDeptHead() {
+        return deptHead;
+    }
+
+    public void setDeptHead(Person deptHead) {
+        this.deptHead = deptHead;
     }
 
     public float getBudget() {
@@ -42,12 +61,12 @@ public class Department {
         this.budget = budget;
     }
 
-    public Department getIn_dept() {
-        return in_dept;
+    public Department getParentDepartment() {
+        return parentDepartment;
     }
 
-    public void setIn_dept(Department in_dept) {
-        this.in_dept = in_dept;
+    public void setParentDepartment(Department parentDepartment) {
+        this.parentDepartment = parentDepartment;
     }
 
     public Date getFounded() {

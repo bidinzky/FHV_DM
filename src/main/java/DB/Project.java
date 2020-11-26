@@ -3,49 +3,58 @@ package DB;
 import java.util.List;
 
 public class Project {
-    private int projno;
-    private String projname;
-    private Person projhead;
-    private Project in_proj;
-    private List<Person> pers_proj;
+    private int projNo;
+    private String name;
+    private Person head;
+    private Project parentProject;
+    private List<Person> members;
+    private List<Project> subProjects;
 
-    public int getProjno() {
-        return projno;
+    public List<Project> getSubProjects() {
+        return subProjects;
     }
 
-    public void setProjno(int projno) {
-        this.projno = projno;
+    public void setSubProjects(List<Project> subProjects) {
+        this.subProjects = subProjects;
     }
 
-    public String getProjname() {
-        return projname;
+    public int getProjNo() {
+        return projNo;
     }
 
-    public void setProjname(String projname) {
-        this.projname = projname;
+    public void setProjNo(int projNo) {
+        this.projNo = projNo;
     }
 
-    public Person getProjhead() {
-        return projhead;
+    public String getName() {
+        return name;
     }
 
-    public void setProjhead(Person projhead) {
-        this.projhead = projhead;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Project getIn_proj() {
-        return in_proj;
+    public Person getHead() {
+        return head;
     }
 
-    public void setIn_proj(Project in_proj) {
-        this.in_proj = in_proj;
+    public void setHead(Person head) {
+        this.head = head;
     }
 
-    public List<Person> getPers_proj() {
-        return pers_proj;
+    public Project getParentProject() {
+        return parentProject;
     }
 
-    public void setPers_proj(List<Person> pers_proj) {
-        this.pers_proj = pers_proj;
+    public void setParentProject(Project parentProject) {
+        this.parentProject = parentProject;
+    }
+
+    public List<Person> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Person> members) {
+        this.members = members;
     }
 }
