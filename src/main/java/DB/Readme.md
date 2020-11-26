@@ -2,4 +2,4 @@
 
 This is our Project in Datamanagement!
 
-Contributers are: Lukas, Jna, Vanessa, Stefan
+Contributors are: Lukas, Jna, Vanessa, Stefan
