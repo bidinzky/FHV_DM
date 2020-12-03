@@ -1,4 +1,4 @@
-package DBCONN;
+package JDBC;
 
 import java.sql.*;
 

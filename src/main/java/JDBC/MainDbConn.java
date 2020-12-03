@@ -1,11 +1,7 @@
-package DBCONN;
+package JDBC;
 
 import DB.Person;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
@@ -42,6 +38,10 @@ public class MainDbConn {
         while(listIterator.hasNext()) {
             System.out.println(listIterator.next().toString());
         }
+
+        System.out.println("----");
+
+        System.out.println(DbFacade.getPersonById(728));
 
     }
 }
