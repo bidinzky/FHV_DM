@@ -26,15 +26,15 @@ public class ProjectBroker extends BrokerBase<Project> {
     }
 
     @Override
-    public boolean update(Project data) {
+    public Project update(Project data) {
         // TODO Auto-generated method stub
-        return false;
+        return null;
     }
 
     @Override
-    public boolean delete(Object id) {
+    public Project delete(Object id) {
         // TODO Auto-generated method stub
-        return false;
+        return null;
     }
     
     

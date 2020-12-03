@@ -1,6 +1,6 @@
 package JDBC;
 
-import DB.Person;
+import DB.*;
 import JDBC.Broker.*;
 
 import java.sql.Connection;
@@ -22,5 +22,24 @@ public class DbFacade {
     public static Person getPersonById(Integer id){
         PersonBroker persBro = new PersonBroker();
         return persBro.getById(id);
+    }
+
+
+    private static <T> T save(T val, BrokerBase<T> broker) {
+        return broker.update(val);
+    }
+    
+    public static Person save(Person val) {
+        return save(val, new PersonBroker());
+    }
+
+    public static Department save(Department val) {
+        //TODO
+        return null;
+    }
+
+    public static Project save(Project val) {
+        //TODO
+        return null;
     }
 }

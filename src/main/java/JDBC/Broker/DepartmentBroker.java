@@ -6,7 +6,7 @@ import DB.Department;
 import JDBC.BrokerBase;
 
 public class DepartmentBroker extends BrokerBase<Department> {
-    
+
     @Override
     public boolean insert(Department data) {
         // TODO Auto-generated method stub
@@ -26,15 +26,16 @@ public class DepartmentBroker extends BrokerBase<Department> {
     }
 
     @Override
-    public boolean update(Department data) {
+    public Department update(Department data) {
         // TODO Auto-generated method stub
-        return false;
+        return null
+        ;
     }
 
     @Override
-    public boolean delete(Object id) {
+    public Department delete(Object id) {
         // TODO Auto-generated method stub
-        return false;
+        return null;
     }
     
 }

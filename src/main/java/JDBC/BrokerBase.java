@@ -16,7 +16,7 @@ public abstract class BrokerBase<T>{
     public abstract boolean insert(T data);
     public abstract LinkedList<T> getAll();
     public abstract T getById(Object id);
-    public abstract boolean update(T data);
-    public abstract boolean delete(Object id);
+    public abstract T update(T data);
+    public abstract T delete(Object id);
 
 }
