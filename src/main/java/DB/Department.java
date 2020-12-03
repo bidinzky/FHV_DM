@@ -77,4 +77,18 @@ public class Department {
     public void setFounded(LocalDate founded) {
         this.founded = founded;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "deptNo=" + deptNo +
+                ", name='" + name + '\'' +
+                ", deptHead=" + deptHead +
+                ", budget=" + budget +
+                ", parentDepartment=" + parentDepartment +
+                ", founded=" + founded +
+                ", members=" + members +
+                ", subDepartments=" + subDepartments +
+                '}';
+    }
 }

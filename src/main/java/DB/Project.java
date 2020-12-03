@@ -57,4 +57,16 @@ public class Project {
     public void setMembers(List<Person> members) {
         this.members = members;
     }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "projNo=" + projNo +
+                ", name='" + name + '\'' +
+                ", head=" + head +
+                ", parentProject=" + parentProject +
+                ", members=" + members +
+                ", subProjects=" + subProjects +
+                '}';
+    }
 }

@@ -97,4 +97,20 @@ public class Person {
     public void setQuitDate(LocalDate quitDate) {
         this.quitDate = quitDate;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "persNo=" + persNo +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", department=" + department +
+                ", salary=" + salary +
+                ", entryDate=" + entryDate +
+                ", quitDate=" + quitDate +
+                ", gender=" + gender +
+                ", projects=" + projects +
+                ", headOfProjects=" + headOfProjects +
+                '}';
+    }
 }
