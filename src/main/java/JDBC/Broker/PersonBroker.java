@@ -1,6 +1,7 @@
-package JDBC;
+package JDBC.Broker;
 
 import DB.Person;
+import JDBC.BrokerBase;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -8,7 +9,7 @@ import java.util.LinkedList;
 public class PersonBroker extends BrokerBase<Person> {
 
     @Override
-    protected boolean insert(Person data) {
+    public boolean insert(Person data) {
         return false;
     }
 
@@ -41,7 +42,7 @@ public class PersonBroker extends BrokerBase<Person> {
     }
 
     @Override
-    protected Person getById(Object id) {
+    public Person getById(Object id) {
         Person output = null;
 
         try {
@@ -71,12 +72,12 @@ public class PersonBroker extends BrokerBase<Person> {
     }
 
     @Override
-    protected boolean update(Person data) {
+    public boolean update(Person data) {
         return false;
     }
 
     @Override
-    protected boolean delete(Object id) {
+    public boolean delete(Object id) {
         return false;
     }
 }

@@ -13,10 +13,10 @@ public abstract class BrokerBase<T>{
     }
 
     // CRUD
-    protected abstract boolean insert(T data);
-    protected abstract LinkedList<T> getAll();
-    protected abstract T getById(Object id);
-    protected abstract boolean update(T data);
-    protected abstract boolean delete(Object id);
+    public abstract boolean insert(T data);
+    public abstract LinkedList<T> getAll();
+    public abstract T getById(Object id);
+    public abstract boolean update(T data);
+    public abstract boolean delete(Object id);
 
 }

@@ -1,6 +1,7 @@
 package JDBC;
 
 import DB.Person;
+import JDBC.Broker.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
