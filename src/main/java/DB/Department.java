@@ -28,7 +28,7 @@ public class Department {
     @OneToMany(mappedBy = "parentDepartment")
     private List<Department> subDepartments;
 
-    /*public List<Person> getMembers() {
+    public List<Person> getMembers() {
         return members;
     }
 
@@ -42,7 +42,7 @@ public class Department {
 
     public void setSubDepartments(List<Department> subDepartments) {
         this.subDepartments = subDepartments;
-    }*/
+    }
 
     public int getDeptNo() {
         return deptNo;

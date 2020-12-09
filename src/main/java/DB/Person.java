@@ -46,7 +46,7 @@ public class Person {
     private List<Project> headOfProjects;
 
 
-    /*public List<Project> getHeadOfProjects() {
+    public List<Project> getHeadOfProjects() {
         return headOfProjects;
     }
 
@@ -60,7 +60,7 @@ public class Person {
 
     public void setProjects(List<Project> projects) {
         this.projects = projects;
-    }*/
+    }
 
     public int getPersNo() {
         return persNo;
@@ -86,13 +86,13 @@ public class Person {
         this.lastName = lastName;
     }
 
-    /*public Department getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
     public void setDepartment(Department department) {
         this.department = department;
-    }*/
+    }
 
     public char getGender() {
         return gender;

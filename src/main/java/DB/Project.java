@@ -22,13 +22,13 @@ public class Project {
     @OneToMany(mappedBy = "parentProject")
     private List<Project> subProjects;
 
-    /*public List<Project> getSubProjects() {
+    public List<Project> getSubProjects() {
         return subProjects;
     }
 
     public void setSubProjects(List<Project> subProjects) {
         this.subProjects = subProjects;
-    }*/
+    }
 
     public int getProjNo() {
         return projNo;
@@ -46,7 +46,7 @@ public class Project {
         this.name = name;
     }
 
-    /*public Person getHead() {
+    public Person getHead() {
         return head;
     }
 
@@ -69,8 +69,6 @@ public class Project {
     public void setMembers(List<Person> members) {
         this.members = members;
     }
-
-    */
 
     @Override
     public String toString() {
