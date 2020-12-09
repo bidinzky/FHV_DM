@@ -1,22 +1,34 @@
 package DB;
 
+import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
+@Entity
 public class Project {
+    @Id
+    @Column(name = "PROJNO")
     private int projNo;
+    @Column(name = "PROJNAME")
     private String name;
-    private Person head;
-    private Project parentProject;
+    @ManyToMany(mappedBy = "projects")
     private List<Person> members;
+    @ManyToOne
+    @JoinColumn(name = "PROJHEAD")
+    private Person head;
+    @ManyToOne
+    @JoinColumn(name = "IN_PROJ")
+    private Project parentProject;
+    @OneToMany(mappedBy = "parentProject")
     private List<Project> subProjects;
 
-    public List<Project> getSubProjects() {
+    /*public List<Project> getSubProjects() {
         return subProjects;
     }
 
     public void setSubProjects(List<Project> subProjects) {
         this.subProjects = subProjects;
-    }
+    }*/
 
     public int getProjNo() {
         return projNo;
@@ -34,7 +46,7 @@ public class Project {
         this.name = name;
     }
 
-    public Person getHead() {
+    /*public Person getHead() {
         return head;
     }
 
@@ -58,14 +70,16 @@ public class Project {
         this.members = members;
     }
 
+    */
+
     @Override
     public String toString() {
         return "Project{" +
                 "projNo=" + projNo +
                 ", name='" + name + '\'' +
-                ", head=" + head +
-                ", parentProject=" + parentProject +
                 ", members=" + members +
+                ", head=" + head +
+                ", parentProject='" + (Objects.nonNull(parentProject)?parentProject.name:"") + '\'' +
                 ", subProjects=" + subProjects +
                 '}';
     }

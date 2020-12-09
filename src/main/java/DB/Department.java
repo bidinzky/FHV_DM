@@ -1,20 +1,34 @@
 package DB;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Entity
 public class Department {
+    @Id
+    @Column(name = "DEPTNO")
     private int deptNo;
+    @Column(name = "DEPTNAME")
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "DEPTHEAD")
     private Person deptHead;
+    @Column(name = "BUDGET")
     private BigDecimal budget;
+    @ManyToOne
+    @JoinColumn(name = "IN_DEPT")
     private Department parentDepartment;
+    @Column(name = "FOUNDED")
     private LocalDate founded;
+    @OneToMany(mappedBy = "department")
     private List<Person> members;
+    @OneToMany(mappedBy = "parentDepartment")
     private List<Department> subDepartments;
 
-    public List<Person> getMembers() {
+    /*public List<Person> getMembers() {
         return members;
     }
 
@@ -28,7 +42,7 @@ public class Department {
 
     public void setSubDepartments(List<Department> subDepartments) {
         this.subDepartments = subDepartments;
-    }
+    }*/
 
     public int getDeptNo() {
         return deptNo;
@@ -83,12 +97,12 @@ public class Department {
         return "Department{" +
                 "deptNo=" + deptNo +
                 ", name='" + name + '\'' +
-                ", deptHead=" + deptHead +
+                ", deptHead=" + deptHead.getName() +
                 ", budget=" + budget +
                 ", parentDepartment=" + parentDepartment +
                 ", founded=" + founded +
-                ", members=" + members +
-                ", subDepartments=" + subDepartments +
+                ", members={" + members.stream().map(Person::getName).collect(Collectors.joining(",")) + "}" +
+                ", subDepartments={" + subDepartments.stream().map(Department::getName).collect(Collectors.joining(",")) + "}" +
                 '}';
     }
 }

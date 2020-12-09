@@ -1,8 +1,14 @@
 package JDBC;
 
+import DB.Department;
 import DB.Person;
+import DB.Project;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 
 public class MainDbConn {
@@ -33,7 +39,7 @@ public class MainDbConn {
 
          */
 
-        LinkedList<Person> resList = DbFacade.getAllPersons();
+        /*LinkedList<Person> resList = DbFacade.getAllPersons();
         ListIterator<Person> listIterator = resList.listIterator();
         while(listIterator.hasNext()) {
             System.out.println(listIterator.next().toString());
@@ -41,7 +47,11 @@ public class MainDbConn {
 
         System.out.println("----");
 
-        System.out.println(DbFacade.getPersonById(728));
+        System.out.println(DbFacade.getPersonById(728));*/
 
+        EntityManagerFactory fact = Persistence.createEntityManagerFactory("PersProj");
+        EntityManager entityManager = fact.createEntityManager();
+        var persons = (List<Person>) entityManager.createQuery("from Person ").getResultList();
+        for (Person p : persons) {System.out.println(p.toString());}
     }
 }
