@@ -142,8 +142,8 @@ public class Person {
                 ", entryDate=" + entryDate +
                 ", quitDate=" + quitDate +
                 ", gender=" + gender +
-                ", projects={" + projects.stream().map(Project::getName).collect(Collectors.joining(",")) + "}" +
-                ", headOfProjects={" + headOfProjects.stream().map(Project::getName).collect(Collectors.joining(",")) + '\'' +
+                ", projects={" + (projects != null?(projects.stream().map(Project::getName).collect(Collectors.joining(","))):"") + "}" +
+                ", headOfProjects={" + (headOfProjects != null?headOfProjects.stream().map(Project::getName).collect(Collectors.joining(",")):"") + '\'' +
                 '}';
     }
 }

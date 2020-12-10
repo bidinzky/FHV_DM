@@ -3,10 +3,13 @@ package JDBC;
 import DB.Department;
 import DB.Person;
 import DB.Project;
+import JDBC.Broker.PersonBroker;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -48,10 +51,15 @@ public class MainDbConn {
         System.out.println("----");
 
         System.out.println(DbFacade.getPersonById(728));*/
+        var p = new Person();
+        p.setPersNo(111);
+        p.setEntryDate(LocalDate.EPOCH);
+        p.setGender('M');
+        p.setFirstName("no");
+        p.setLastName("name");
 
-        EntityManagerFactory fact = Persistence.createEntityManagerFactory("PersProj");
-        EntityManager entityManager = fact.createEntityManager();
-        var persons = (List<Person>) entityManager.createQuery("from Person ").getResultList();
-        for (Person p : persons) {System.out.println(p.toString());}
+        //DbFacade.save(p);
+        DbFacade.delete(p);
+        System.out.println(DbFacade.getAllPersons());
     }
 }

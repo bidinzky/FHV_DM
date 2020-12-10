@@ -1,22 +1,22 @@
 package JDBC;
 
+
+import org.hibernate.SessionFactory;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.*;
 
 public class DbConn {
 
     private static DbConn single_instance;
 
-    private Connection connection;
+    private final EntityManager connection;
 
     private DbConn(String user, String password) {
-        try {
-        connection = DriverManager.getConnection("jdbc:oracle:thin:@//elmo.hostingcenter.uclv.net:1521/xepdb1",
-                user,
-                password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+        EntityManagerFactory fact = Persistence.createEntityManagerFactory("PersProj");
+        connection = fact.createEntityManager();
     }
 
     private DbConn() {
@@ -31,7 +31,7 @@ public class DbConn {
         return single_instance;
     }
 
-    public Connection getConnection() {
+    public EntityManager getConnection() {
         return connection;
     }
 }

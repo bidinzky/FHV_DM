@@ -1,41 +1,13 @@
 package JDBC.Broker;
 
-import java.util.LinkedList;
-
 import DB.Department;
+import DB.Person;
 import JDBC.BrokerBase;
 
+import java.util.List;
+
 public class DepartmentBroker extends BrokerBase<Department> {
-
-    @Override
-    public boolean insert(Department data) {
-        // TODO Auto-generated method stub
-        return false;
+    public DepartmentBroker() {
+        super(Department.class);
     }
-
-    @Override
-    public LinkedList<Department> getAll() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Department getById(Object id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Department update(Department data) {
-        // TODO Auto-generated method stub
-        return null
-        ;
-    }
-
-    @Override
-    public Department delete(Object id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    
 }
